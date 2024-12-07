@@ -7,7 +7,7 @@ namespace SimpleInputs
     {
         public TValue Value { get; private set; }
         public bool IsPressed { get; private set; }
-        public float PressedDuration => IsPressed ? Time.time - PressTime : 0f;
+        public float PressedDuration => (inputLocker == null || !inputLocker.IsEnabled) && IsPressed ? Time.time - PressTime : 0f;
         public float PressTime { get; private set; }
 
         public UnityEvent OnStarted { get; private set; }
@@ -25,6 +25,14 @@ namespace SimpleInputs
             OnPerformed = new();
             OnCanceled = new();
             OnChangedValue = new();
+
+            inputLocker?.OnChanged.AddListener((isLocked) =>
+                {
+                    if (isLocked)
+                    {
+                        SetValue(default);
+                    }
+                });
         }
 
         public void Clear()
@@ -37,7 +45,7 @@ namespace SimpleInputs
 
         public void SetValue(TValue value)
         {
-            if (inputLocker != null && inputLocker.isEnabled)
+            if (inputLocker != null && inputLocker.IsEnabled)
             {
                 value = default;
             }
@@ -48,8 +56,8 @@ namespace SimpleInputs
                 OnChangedValue?.Invoke(Value);
             }
 
-            bool previousIsPressed = IsPressed; 
-            IsPressed = !Value.Equals(default(TValue));
+            bool previousIsPressed = IsPressed;
+            IsPressed = (inputLocker == null || !inputLocker.IsEnabled) && !Value.Equals(default(TValue));
 
             if (IsPressed && !previousIsPressed)
             {

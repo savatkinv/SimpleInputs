@@ -47,6 +47,7 @@ MonoBehaviour:
   pointerOverUI: 0
   currentPointerMouse: 0
   currentPointerTouchpad: 0
+  gameState: 0
 --- !u!1 &6907234063749088226
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,16 +195,60 @@ PrefabInstance:
       propertyPath: inputs
       value: 
       objectReference: {fileID: 6613178580047600138}
+    - target: {fileID: 864967800898860435, guid: d9f6ec9d4755b8541952ada978a1764d,
+        type: 3}
+      propertyPath: mobileInputPanel
+      value: 
+      objectReference: {fileID: 2136288750345137703}
     - target: {fileID: 1647547117666533150, guid: d9f6ec9d4755b8541952ada978a1764d,
         type: 3}
       propertyPath: m_Name
       value: Mobile Input
       objectReference: {fileID: 0}
+    - target: {fileID: 2025833811946962419, guid: d9f6ec9d4755b8541952ada978a1764d,
+        type: 3}
+      propertyPath: buttonStateOutputEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnFireAlt
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025833811946962419, guid: d9f6ec9d4755b8541952ada978a1764d,
+        type: 3}
+      propertyPath: buttonStateOutputEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SimpleInputs.MobileInput.MobileInput, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233296997989821251, guid: d9f6ec9d4755b8541952ada978a1764d,
+        type: 3}
+      propertyPath: buttonStateOutputEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnFire
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233296997989821251, guid: d9f6ec9d4755b8541952ada978a1764d,
+        type: 3}
+      propertyPath: buttonStateOutputEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SimpleInputs.MobileInput.MobileInput, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684285548444424689, guid: d9f6ec9d4755b8541952ada978a1764d,
+        type: 3}
+      propertyPath: buttonStateOutputEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnJump
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684285548444424689, guid: d9f6ec9d4755b8541952ada978a1764d,
+        type: 3}
+      propertyPath: buttonStateOutputEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SimpleInputs.MobileInput.MobileInput, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2772799972618582538, guid: d9f6ec9d4755b8541952ada978a1764d, type: 3}
+    - {fileID: 7782345327597078793, guid: d9f6ec9d4755b8541952ada978a1764d, type: 3}
+    - {fileID: 5479983432780019759, guid: d9f6ec9d4755b8541952ada978a1764d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9f6ec9d4755b8541952ada978a1764d, type: 3}
+--- !u!1 &2136288750345137703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3127193634645373977, guid: d9f6ec9d4755b8541952ada978a1764d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3946166224653277758}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4512395078569961911 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 602539160711492489, guid: d9f6ec9d4755b8541952ada978a1764d,

@@ -19,7 +19,6 @@ namespace SimpleInputs.BaseInput
         [SerializeField] List<GameObject> uiGamepad;
         
         private bool cursorLocked = false;
-        public bool IsGame;
 
         internal enum ControlStyle
         {
@@ -68,7 +67,7 @@ namespace SimpleInputs.BaseInput
 
         private void LockCursor()
         {
-            if (lockCursor && IsGame)
+            if (lockCursor && inputs.gameState == GameState.Game)
             {
                 if (!cursorLocked)
                     SetCursorLockState(true);
