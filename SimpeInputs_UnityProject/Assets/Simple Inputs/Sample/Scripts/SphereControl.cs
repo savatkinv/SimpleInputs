@@ -18,6 +18,9 @@ public class SphereControl : MonoBehaviour
     {
         Vector2 moveInput = inputs.PlayerInputs.Move.Value;
         transform.position += moveSpeed * Time.deltaTime * new Vector3(moveInput.x, 0, moveInput.y);
+
+        if (inputs.PlayerInputs.Jump.PressedDuration > 0)
+            Debug.Log($"Jump, press duration = {inputs.PlayerInputs.Jump.PressedDuration}s");
     }
 
     private void Fire()
@@ -27,6 +30,6 @@ public class SphereControl : MonoBehaviour
 
     private void Jump(float duration)
     {
-        Debug.Log($"Jump, press duration = {duration}s");
+        Debug.Log($"Jump OnCanceled, press duration = {duration}s");
     }
 }

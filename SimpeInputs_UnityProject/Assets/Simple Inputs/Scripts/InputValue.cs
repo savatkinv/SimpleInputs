@@ -7,7 +7,7 @@ namespace SimpleInputs
     {
         public TValue Value { get; private set; }
         public bool IsPressed { get; private set; }
-        public float PressedDuration { get; private set; }
+        public float PressedDuration => IsPressed ? Time.time - PressTime : 0f;
         public float PressTime { get; private set; }
 
         public UnityEvent OnStarted { get; private set; }
@@ -40,7 +40,6 @@ namespace SimpleInputs
             if (inputLocker != null && inputLocker.isEnabled)
             {
                 value = default;
-                PressedDuration = 0f;
             }
 
             if (!Value.Equals(value))
@@ -65,8 +64,7 @@ namespace SimpleInputs
 
             if (!IsPressed && previousIsPressed)
             {
-                PressedDuration = Time.time - PressTime;
-                OnCanceled?.Invoke(PressedDuration);
+                OnCanceled?.Invoke(Time.time - PressTime);
             }
         }
     }
