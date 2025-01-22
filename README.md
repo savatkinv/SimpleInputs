@@ -29,9 +29,9 @@ private void Update()
 ## Linking inputs with Zenject
 Bind `Inputs` as single in installer:
 ```csharp
-Container.Bind<Inputs>().AsSingle();
+Container.Bind<Inputs>().FromComponentInHierarchy().AsSingle();
 ```
-and inject Inputs for simple linking
+and inject Inputs for simple linking:
 ```csharp
 [Inject] private readonly Inputs input;
 ```
