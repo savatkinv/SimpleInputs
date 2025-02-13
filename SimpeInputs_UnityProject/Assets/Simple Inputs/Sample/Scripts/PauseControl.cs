@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using SimpleInputs;
-using UnityEngine.Windows;
 
 public class PauseControl : MonoBehaviour
 {
@@ -21,7 +20,7 @@ public class PauseControl : MonoBehaviour
 
     public void SwitchPause()
     {
-        isGame =!isGame;
+        isGame = !isGame;
 
         SetPause(!isGame);
     }
